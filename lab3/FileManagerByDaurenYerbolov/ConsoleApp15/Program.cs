@@ -72,7 +72,7 @@ namespace ConsoleApp14
             Console.WriteLine(s1);
 
         }
-        static double GetDirectorySize(string folder)
+        /*static double GetDirectorySize(string folder)
         {
             double size = 0;
             try
@@ -83,29 +83,42 @@ namespace ConsoleApp14
 
                 foreach (FileInfo f in fi)
                 {
+                    if (size > 10e7)
+                    {
+                        size = -1;
+                        break;
+                    }
                     size += f.Length;
+                    
                 }
 
                 foreach (DirectoryInfo df in diA)
                 {
+                    if (size > 10e7)
+                    {
+                        size = -1;
+                        break;
+                    }
                     GetDirectorySize(df.FullName);
                     size += GetDirectorySize(df.FullName);
+                    
                 }
-                return Math.Round((double)(size), 1);
+                        return Math.Round(size, 1);
+                
             }
-            catch (DirectoryNotFoundException ex)
-            {
-                return 1;
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                return 1;
-            }
-            catch (Exception ex)
+            catch (DirectoryNotFoundException)
             {
                 return 0;
             }
-        }
+            catch (UnauthorizedAccessException)
+            {
+                return 0;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }*/
         static double GetFileSize(FileSystemInfo dr)
         {
             double res = 0;
@@ -120,12 +133,13 @@ namespace ConsoleApp14
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.Clear();
             Console.WriteLine(' ');
-            Thread.Sleep(100);
+            Thread.Sleep(0);
             SetTextColor('R');
             Console.WriteLine("            NAME                      TYPE             LAST ACCESS                  SIZE");
             DrawUpBorder();
             int pos = index / 30;
             pos *= 30;
+           
             for (int i = pos; i < pos + 30; ++i)
             {
                 int k = 0;
@@ -195,28 +209,30 @@ namespace ConsoleApp14
                     }
                     else
                     {
-                        string access = null;
-                        access = array[i].LastAccessTime.ToString() + GetDirectorySize(array[i].FullName).ToString();
                         Console.Write(ss + mass + t + t2);
                         SetTextColor('D');
-                        if ((array[i].Attributes & FileAttributes.Hidden) == 0)
-                        {
-                            Console.Write("  Directory       {0}           {1} bytes", array[i].LastAccessTime, GetDirectorySize(array[i].FullName));
-                            for (int r = 0; r < t3.Length - 35 - access.Length; r++)
+                        string access = null;
+                        access = array[i].LastAccessTime.ToString();// + GetDirectorySize(array[i].FullName).ToString();
+                          
+                            if ((array[i].Attributes & FileAttributes.Hidden) == 0)
                             {
-                                sdir += " ";
+                            Console.Write("  Directory          {0}           ", array[i].LastAccessTime);//, GetDirectorySize(array[i].FullName));
+                                for (int r = 0; r < t3.Length - 32 - access.Length; r++)
+                                {
+                                    sdir += " ";
+                                }
+                                Console.Write(sdir);
                             }
-                            Console.Write(sdir);
-                        }
-                        else if ((array[i].Attributes & FileAttributes.Hidden) != 0)
-                        {
-                            Console.Write("  Hidden          {0}           {1} bytes", array[i].LastAccessTime, GetDirectorySize(array[i].FullName));
-                            for (int r = 0; r < t3.Length - 35 - access.Length; r++)
+                            else if ((array[i].Attributes & FileAttributes.Hidden) != 0)
                             {
-                                sdir += " ";
+                            Console.Write("  Hidden             {0}           ", array[i].LastAccessTime);//, GetDirectorySize(array[i].FullName));
+                                for (int r = 0; r < t3.Length - 32 - access.Length; r++)
+                                {
+                                    sdir += " ";
+                                }
+                                Console.Write(sdir);
                             }
-                            Console.Write(sdir);
-                        }
+          
                     }
 
                 }
@@ -286,19 +302,22 @@ namespace ConsoleApp14
             FileSystemInfo[] array1 = dir.GetFileSystemInfos();
             array.AddRange(dir.GetDirectories());
             array.AddRange(dir.GetFiles());
-
+            
             int index = 0;
             bool quit = false;
-
             while (!quit)
             {
                 Draw(index, array, path);
+
+
 
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
 
                 switch (pressedKey.Key)
                 {
                     case ConsoleKey.UpArrow:
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Clear();
                         index--;
                         if (index < 0)
                         {
@@ -306,13 +325,26 @@ namespace ConsoleApp14
                         }
                         break;
                     case ConsoleKey.DownArrow:
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Clear();
                         index = (index + 1) % array.Count;
                         break;
                     case ConsoleKey.Enter:
                         if (array[index].GetType() == typeof(DirectoryInfo))
                         {
-                            DirectoryInfo childFolder = array[index] as DirectoryInfo;
-                            Path(array[index].FullName);
+                            try
+                            {
+                                Console.BackgroundColor = ConsoleColor.Blue;
+                                Console.Clear();
+                                Path(array[index].FullName);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Blue;
+                                Console.Clear();
+                                Console.CursorVisible = false;
+                                Console.WriteLine("Exception");
+                            }
                         }
                         else if (array[index].GetType() == typeof(FileInfo))
                         {
@@ -330,10 +362,12 @@ namespace ConsoleApp14
                                 Console.ReadKey();
                                 Console.CursorVisible = false;
                             }
-                            catch (Exception e)
+                            catch (Exception ex)
                             {
-                                Console.WriteLine("Cannot open file!");
-
+                                Console.BackgroundColor = ConsoleColor.Blue;
+                                Console.Clear();
+                                Console.CursorVisible = false;
+                                Console.WriteLine("Exception");
                             }
                             finally
                             {
@@ -352,12 +386,14 @@ namespace ConsoleApp14
                         }
                         break;
                     case ConsoleKey.Backspace:
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Clear();
                         quit = true;
                         break;
                     case ConsoleKey.Escape:
                         Console.BackgroundColor = ConsoleColor.Blue;
                         Console.Clear();
-                        Console.WriteLine("If you want to quit the program press the Escape, otherwise press BackSpace");
+                        Console.WriteLine("If you want to quit the program press the Escape, otherwise press Backspace");
                         ConsoleKeyInfo pressed = Console.ReadKey();
 
                         switch (pressed.Key)
@@ -383,7 +419,7 @@ namespace ConsoleApp14
         {
             Console.SetWindowSize(110, 35);
             Console.SetBufferSize(110, 300);
-            Path(@"C:\Program Files (x86)\");
+            Path(@"C:\");
 
         }
     }

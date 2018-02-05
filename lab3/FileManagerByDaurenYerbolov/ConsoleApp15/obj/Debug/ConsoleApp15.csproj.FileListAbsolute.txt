@@ -5,3 +5,10 @@ C:\Users\Dauren\source\repos\ConsoleApp15\ConsoleApp15\obj\Debug\ConsoleApp15.cs
 C:\Users\Dauren\source\repos\ConsoleApp15\ConsoleApp15\obj\Debug\ConsoleApp15.csproj.CoreCompileInputs.cache
 C:\Users\Dauren\source\repos\ConsoleApp15\ConsoleApp15\obj\Debug\ConsoleApp15.exe
 C:\Users\Dauren\source\repos\ConsoleApp15\ConsoleApp15\obj\Debug\ConsoleApp15.pdb
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\bin\Debug\ConsoleApp15.exe.config
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\bin\Debug\ConsoleApp15.exe
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\bin\Debug\ConsoleApp15.pdb
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\obj\Debug\ConsoleApp15.csprojResolveAssemblyReference.cache
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\obj\Debug\ConsoleApp15.csproj.CoreCompileInputs.cache
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\obj\Debug\ConsoleApp15.exe
+C:\Users\Dauren\source\repositorypp2Dauren\lab3\FileManagerByDaurenYerbolov\ConsoleApp15\obj\Debug\ConsoleApp15.pdb
