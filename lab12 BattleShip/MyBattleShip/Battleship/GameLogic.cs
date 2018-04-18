@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Battleship
 {
@@ -13,6 +14,7 @@ namespace Battleship
         human,
         bot
     }
+    
 
     class GameLogic
     {
@@ -27,12 +29,12 @@ namespace Battleship
         void MakeBotTurn()
         {
             Random rnd = new Random();
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             int i = rnd.Next(0, 10);
             int j = rnd.Next(0, 10);
-            while (p1.brain.Process2(string.Format("{0}_{1}", i, j)))
+            while (p1.brain.ShootingProcess(string.Format("{0}_{1}", i, j)))
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(2500);
 
                 i = rnd.Next(0, 10);
                 j = rnd.Next(0, 10);

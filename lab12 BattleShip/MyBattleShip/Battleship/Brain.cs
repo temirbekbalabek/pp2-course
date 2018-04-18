@@ -18,6 +18,13 @@ namespace Battleship
         missed,
         killed
     }
+    public enum GameState
+    {
+        arrangement, 
+        ready,
+        game
+    }
+
 
 
 
@@ -25,17 +32,18 @@ namespace Battleship
 
     public class Brain
     {
-
         public ShipType[] st = {ShipType.D4,
                           ShipType.D3, ShipType.D3,
                           ShipType.D2, ShipType.D2, ShipType.D2,
                           ShipType.D1, ShipType.D1, ShipType.D1, ShipType.D1};
 
         public int stIndex = -1;
+        public int maxShip = 10;
         public CellState[,] map = new CellState[10, 10];
-        List<Ship> units = new List<Ship>();
+        public List<Ship> units = new List<Ship>();
 
         MyDelegate invoker;
+
         public Brain(MyDelegate invoker)
         {
             this.invoker = invoker;
@@ -50,8 +58,7 @@ namespace Battleship
 
 
         }
-
-        public bool Process2(string msg)
+        public bool ShootingProcess(string msg)
         {
             bool successShoot = false;
 
@@ -101,7 +108,7 @@ namespace Battleship
 
                         if (killed)
                         {
-
+                            maxShip--;
                             foreach (ShipPoint p in units[index].body)
                             {
                                 map[p.X, p.Y] = CellState.killed;
@@ -109,7 +116,6 @@ namespace Battleship
                             }
 
                             MarkAuraLocation(units[index], CellState.missed);
-
                         }
                     }
 
@@ -139,6 +145,7 @@ namespace Battleship
             Point p = new Point(i, j);
 
             ShipPlacement(p);
+
 
         }
 
@@ -195,7 +202,7 @@ namespace Battleship
             }
             
         }
-        private void MarkAuraLocationRight(Ship ship, CellState cellState)
+        private void MarkAuraLocationHorizontal(Ship ship, CellState cellState)
         {
             for (int i = 0; i < ship.body.Count; i++)
             {
@@ -226,67 +233,8 @@ namespace Battleship
 
             }
         }
-        private void MarkAuraLocationLeft(Ship ship, CellState cellState)
-        {
-            for (int i = 0; i < ship.body.Count; i++)
-            {
-                if (i != 0 || i != ship.body.Count - 1)
-                {
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y + 1, cellState);
 
-                }
-                if (i == 0)
-                {
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y + 1, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y + 1, cellState);
-
-                }
-                if (i == ship.body.Count - 1)
-                {
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y + 1, cellState); ;
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y + 1, cellState);
-                }
-
-            }
-        }
-        private void MarkAuraLocationUp(Ship ship, CellState cellState)
-        {
-            for (int i = 0; i < ship.body.Count; i++)
-            {
-                if (i != 0 || i != ship.body.Count - 1)
-                {
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y, cellState);
-
-                }
-                if (i == 0)
-                {
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y + 1, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y + 1, cellState);
-
-                }
-                if (i == ship.body.Count - 1)
-                {
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y, cellState);
-                    MarkAuraCell(ship.body[i].X - 1, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X, ship.body[i].Y - 1, cellState);
-                    MarkAuraCell(ship.body[i].X + 1, ship.body[i].Y - 1, cellState);
-                }
-
-            }
-        }
-        private void MarkAuraLocationDown(Ship ship, CellState cellState)
+        private void MarkAuraLocationVertical(Ship ship, CellState cellState)
         {
             for (int i = 0; i < ship.body.Count; i++)
             {
@@ -321,17 +269,11 @@ namespace Battleship
         {
             switch (Ship.direction)
             {
-                case ShipDirection.up:
-                    MarkAuraLocationUp(ship, cellState);
+                case ShipDirection.vertical:
+                    MarkAuraLocationVertical(ship, cellState);
                     break;
-                case ShipDirection.down:
-                    MarkAuraLocationDown(ship, cellState);
-                    break;
-                case ShipDirection.right:
-                    MarkAuraLocationRight(ship, cellState);
-                    break;
-                case ShipDirection.left:
-                    MarkAuraLocationLeft(ship, cellState);
+                case ShipDirection.horizontal:
+                    MarkAuraLocationHorizontal(ship, cellState);
                     break;
                 default:
                     break;

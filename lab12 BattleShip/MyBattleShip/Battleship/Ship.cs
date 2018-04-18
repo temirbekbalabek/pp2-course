@@ -16,16 +16,14 @@ namespace Battleship
     }
     public enum ShipDirection
     {
-        up,
-        down,
-        left,
-        right
+        horizontal,
+        vertical
     }
-    class Ship
+    public class Ship
     {
         public List<ShipPoint> body = new List<ShipPoint>();
         ShipType type;
-        public static ShipDirection direction = ShipDirection.right;
+        public static ShipDirection direction = ShipDirection.horizontal;
 
         public Ship(Point p, ShipType type)
         {
@@ -37,17 +35,11 @@ namespace Battleship
         {
             switch (direction)
             {
-                case ShipDirection.down:
-                    Down(p);
+                case ShipDirection.vertical:
+                    Vertical(p);
                     break;
-                case ShipDirection.up:
-                    Up(p);
-                    break;
-                case ShipDirection.right:
-                    Right(p);
-                    break;
-                case ShipDirection.left:
-                    Left(p);
+                case ShipDirection.horizontal:
+                    Horizontal(p);
                     break;
                 default:
                     break;
@@ -55,36 +47,7 @@ namespace Battleship
 
 
         }
-        public void Up(Point p)
-        {
-            switch (type)
-            {
-                case ShipType.D1:
-                    body.Add(new ShipPoint { X = p.X, Y = p.Y, PType = PartType.ShipPart });
-                    break;
-                case ShipType.D2:
-                    for (int i = 0; i < 2; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X, Y = p.Y - i, PType = PartType.ShipPart });
-                    }
-                    break;
-                case ShipType.D3:
-                    for (int i = 0; i < 3; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X, Y = p.Y - i, PType = PartType.ShipPart });
-                    }
-                    break;
-                case ShipType.D4:
-                    for (int i = 0; i < 4; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X, Y = p.Y - i, PType = PartType.ShipPart });
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-        public void Down(Point p)
+        public void Vertical(Point p)
         {
             switch (type)
             {
@@ -113,7 +76,7 @@ namespace Battleship
                     break;
             }
         }
-        public void Right(Point p)
+        public void Horizontal(Point p)
         {
             switch (type)
             {
@@ -142,34 +105,6 @@ namespace Battleship
                     break;
             }
         }
-        public void Left(Point p)
-        {
-            switch (type)
-            {
-                case ShipType.D1:
-                    body.Add(new ShipPoint { X = p.X, Y = p.Y, PType = PartType.ShipPart });
-                    break;
-                case ShipType.D2:
-                    for (int i = 0; i < 2; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X - i, Y = p.Y, PType = PartType.ShipPart });
-                    }
-                    break;
-                case ShipType.D3:
-                    for (int i = 0; i < 3; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X - i, Y = p.Y, PType = PartType.ShipPart });
-                    }
-                    break;
-                case ShipType.D4:
-                    for (int i = 0; i < 4; ++i)
-                    {
-                        body.Add(new ShipPoint { X = p.X - i, Y = p.Y, PType = PartType.ShipPart });
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+     
     }
 }

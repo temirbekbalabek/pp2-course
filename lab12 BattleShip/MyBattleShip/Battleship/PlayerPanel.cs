@@ -16,7 +16,7 @@ namespace Battleship
     }
     
 
-    enum PlayerType
+    public enum PlayerType
     {
         Human,
         Bot
@@ -26,11 +26,12 @@ namespace Battleship
     {
         public Brain brain;
         int cellW = 35;
-        //bool PanelEnabled = true;
         PanelPosition panelPosition;
         PlayerType playerType;
         private RibbonUpDown ribbonUpDown1;
         TurnDelegate tDelegate;
+        public bool ToggleOn = false;
+           
 
         public PlayerPanel(PanelPosition panelPosition, PlayerType playerType,TurnDelegate tDelegate)
         {
@@ -51,11 +52,11 @@ namespace Battleship
             if (playerType == PlayerType.Bot)
             {
                 //RandomGenerateShips();
+                this.Enabled = false;
             }
         }
         public void RandomGenerateShips()
         {
-           
             Random rnd1 = new Random(Guid.NewGuid().GetHashCode());
             Random rnd2 = new Random(Guid.NewGuid().GetHashCode());
             while (brain.stIndex < brain.st.Length - 1)
@@ -96,8 +97,10 @@ namespace Battleship
                 }
                
             }
-
-            brain = new Brain(ChangeButton);
+            brain = new Brain(DrawButton);
+            
+            
+            
         }
 
 
@@ -112,18 +115,20 @@ namespace Battleship
             }
             else
             {
-                if (!brain.Process2(btn.Name))
+                if (!brain.ShootingProcess(btn.Name))
                 {
                     tDelegate.Invoke();
                 }
-                else if (brain.Process2(btn.Name))
+                else if (brain.ShootingProcess(btn.Name))
                 {
                     
                 }
             }
         }
-        private void ChangeButton(CellState[,] map)
+       
+        private void DrawButton(CellState[,] map)
         {
+            SoundPlayer player = new SoundPlayer(@"C:\Users\Dauren\Desktop\vistrel.wav");
             for (int i = 0; i < 10; ++i)
             {
                 for (int j = 0; j < 10; ++j)
@@ -137,15 +142,29 @@ namespace Battleship
                             colorToFill = Color.White;
                             break;
                         case CellState.busy:
-                            colorToFill = Color.Tan;
+                            if (playerType == PlayerType.Human)
+                            {
+                                colorToFill = Color.Tan;
+                            }
+                            else if (playerType == PlayerType.Bot)
+                            {
+                                colorToFill = Color.White;
+
+                            }
                             break;
                         case CellState.aura:
                             colorToFill = Color.White;
                             break;
                         case CellState.striked:
                             colorToFill = Color.Orange;
-                            SoundPlayer player = new SoundPlayer(@"C:\Users\Dauren\Desktop\vistrel.wav");
-                            player.Play();
+                            if (ToggleOn)
+                            {
+                                player.Play();
+                            }
+                            else if (!ToggleOn)
+                            {
+
+                            }
                             isEnabled = false;
                             break;
                         case CellState.missed:
@@ -154,8 +173,6 @@ namespace Battleship
                             break;
                         case CellState.killed:
                             colorToFill = Color.Red;
-                            SoundPlayer player1 = new SoundPlayer(@"C:\Users\Dauren\Desktop\vistrel.wav");
-                            player1.Play();
                             isEnabled = false;
                             break;
                         default:
@@ -169,7 +186,6 @@ namespace Battleship
 
 
         }
-
         private void InitializeComponent()
         {
             this.ribbonUpDown1 = new System.Windows.Forms.RibbonUpDown();
