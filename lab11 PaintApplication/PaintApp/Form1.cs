@@ -18,7 +18,7 @@ namespace PaintApp
         Bitmap bmp = default(Bitmap);
         Graphics gfx = default(Graphics);
         Pen pen = new Pen(Color.Black, 1);
-
+        
         Tools activeTool = Tools.Pen;
 
         public Form1()
@@ -64,11 +64,11 @@ namespace PaintApp
                 //fill.Fill();
 
                 MapFill mf = new MapFill();
-                mf.Fill(gfx, firstPoint, pen.Color,ref bmp);
+                mf.Fill(gfx, firstPoint, pen.Color, ref bmp);
                 SetupPictureBox(BmpCreationMode.AfterFill, "");
+
             }
         }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -99,6 +99,9 @@ namespace PaintApp
                         firstPoint = secondPoint;
                         eraser.Dispose();
                         break;
+                    case Tools.EyeDropper:
+                        pen.Color = bmp.GetPixel(e.X, e.Y);
+                        break;
                     default:
                         break;
                 }
@@ -118,7 +121,6 @@ namespace PaintApp
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            //pen.Width = float.Parse(numericUpDown1.Value.ToString());
             pen.Width = float.Parse(trackBar1.Value.ToString());
         }
 
@@ -129,7 +131,10 @@ namespace PaintApp
                 pen.Color = colorDialog1.Color;
             }
         }
-
+        private void eyeDropperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            activeTool = Tools.EyeDropper;
+        }
         private void lineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             activeTool = Tools.Line;
@@ -246,30 +251,34 @@ namespace PaintApp
                 SetupPictureBox(BmpCreationMode.FromFile, openFileDialog1.FileName);
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbon1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
 
+        }
+
+        private void Black_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.Black;
+        }
+        private void Red_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.Red;
+        }
+        private void White_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.White;
+        }
+        private void Yellow_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.Yellow;
+        }
+        private void Blue_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.Blue;
+        }
+        private void Pink_Color(object sender, EventArgs e)
+        {
+            pen.Color = Color.HotPink;
         }
     }
 
@@ -281,7 +290,8 @@ namespace PaintApp
         Circle,
         Triangle,
         Line,
-        Eraser
+        Eraser, 
+        EyeDropper
     }
 
     enum BmpCreationMode

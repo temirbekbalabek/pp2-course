@@ -74,23 +74,28 @@
             this.ribbonDescriptionMenuItem1 = new System.Windows.Forms.RibbonDescriptionMenuItem();
             this.ribbonColorChooser3 = new System.Windows.Forms.RibbonColorChooser();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.ribbonItemGroup2 = new System.Windows.Forms.RibbonItemGroup();
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton19 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonColorChooser4 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton17 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton18 = new System.Windows.Forms.RibbonButton();
+            this.ribbonColorChooser5 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonColorChooser6 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonColorChooser7 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonColorChooser8 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonColorChooser9 = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonColorChooser10 = new System.Windows.Forms.RibbonColorChooser();
             this.ribbonPanel26 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButtonList1 = new System.Windows.Forms.RibbonButtonList();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.ribbonItemGroup1 = new System.Windows.Forms.RibbonItemGroup();
             this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
@@ -103,6 +108,10 @@
             this.ribbonTextBox2 = new System.Windows.Forms.RibbonTextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,7 +126,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1118, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
@@ -290,25 +298,10 @@
             // 
             // ribbonTab4
             // 
-            this.ribbonTab4.Panels.Add(this.ribbonPanel10);
             this.ribbonTab4.Panels.Add(this.ribbonPanel11);
             this.ribbonTab4.Panels.Add(this.ribbonPanel12);
             this.ribbonTab4.Panels.Add(this.ribbonPanel26);
             this.ribbonTab4.Text = "Main";
-            // 
-            // ribbonPanel10
-            // 
-            this.ribbonPanel10.ButtonMoreEnabled = false;
-            this.ribbonPanel10.ButtonMoreVisible = false;
-            this.ribbonPanel10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPanel10.Image")));
-            this.ribbonPanel10.Items.Add(this.ribbonButton4);
-            this.ribbonPanel10.Text = "  Clipboard   ";
-            // 
-            // ribbonButton4
-            // 
-            this.ribbonButton4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.Image")));
-            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
-            this.ribbonButton4.Text = "Paste from..";
             // 
             // ribbonPanel11
             // 
@@ -323,6 +316,7 @@
             this.ribbonItemGroup2.Items.Add(this.ribbonButton5);
             this.ribbonItemGroup2.Items.Add(this.ribbonButton6);
             this.ribbonItemGroup2.Items.Add(this.ribbonButton7);
+            this.ribbonItemGroup2.Items.Add(this.ribbonButton19);
             this.ribbonItemGroup2.Text = "ribbonItemGroup2";
             // 
             // ribbonButton5
@@ -349,79 +343,139 @@
             this.ribbonButton7.Text = "ribbonButton7";
             this.ribbonButton7.Click += new System.EventHandler(this.ribbonButton7_Click);
             // 
+            // ribbonButton19
+            // 
+            this.ribbonButton19.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton19.Image")));
+            this.ribbonButton19.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton19.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton19.SmallImage")));
+            this.ribbonButton19.Text = "";
+            this.ribbonButton19.Click += new System.EventHandler(this.eyeDropperToolStripMenuItem_Click);
+            // 
             // ribbonPanel12
             // 
             this.ribbonPanel12.ButtonMoreEnabled = false;
             this.ribbonPanel12.ButtonMoreVisible = false;
             this.ribbonPanel12.Items.Add(this.ribbonColorChooser4);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser5);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser6);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser7);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser8);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser9);
+            this.ribbonPanel12.Items.Add(this.ribbonColorChooser10);
             this.ribbonPanel12.Text = "Colors";
             // 
             // ribbonColorChooser4
             // 
             this.ribbonColorChooser4.Color = System.Drawing.Color.Empty;
+            this.ribbonColorChooser4.DropDownItems.Add(this.ribbonButton16);
+            this.ribbonColorChooser4.DropDownItems.Add(this.ribbonButton17);
+            this.ribbonColorChooser4.DropDownItems.Add(this.ribbonButton18);
             this.ribbonColorChooser4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser4.Image")));
             this.ribbonColorChooser4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser4.SmallImage")));
             this.ribbonColorChooser4.Text = "";
             this.ribbonColorChooser4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // ribbonButton16
+            // 
+            this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
+            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
+            this.ribbonButton16.Text = "ribbonButton16";
+            // 
+            // ribbonButton17
+            // 
+            this.ribbonButton17.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.Image")));
+            this.ribbonButton17.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.SmallImage")));
+            this.ribbonButton17.Text = "ribbonButton17";
+            // 
+            // ribbonButton18
+            // 
+            this.ribbonButton18.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton18.Image")));
+            this.ribbonButton18.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton18.SmallImage")));
+            this.ribbonButton18.Text = "ribbonButton18";
+            // 
+            // ribbonColorChooser5
+            // 
+            this.ribbonColorChooser5.Color = System.Drawing.Color.Black;
+            this.ribbonColorChooser5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser5.Image")));
+            this.ribbonColorChooser5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser5.SmallImage")));
+            this.ribbonColorChooser5.Text = "";
+            this.ribbonColorChooser5.Click += new System.EventHandler(this.Black_Color);
+            // 
+            // ribbonColorChooser6
+            // 
+            this.ribbonColorChooser6.Color = System.Drawing.Color.White;
+            this.ribbonColorChooser6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser6.Image")));
+            this.ribbonColorChooser6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser6.SmallImage")));
+            this.ribbonColorChooser6.Text = "";
+            this.ribbonColorChooser6.Click += new System.EventHandler(this.White_Color);
+            // 
+            // ribbonColorChooser7
+            // 
+            this.ribbonColorChooser7.Color = System.Drawing.Color.Red;
+            this.ribbonColorChooser7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser7.Image")));
+            this.ribbonColorChooser7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser7.SmallImage")));
+            this.ribbonColorChooser7.Text = "";
+            this.ribbonColorChooser7.Click += new System.EventHandler(this.Red_Color);
+            // 
+            // ribbonColorChooser8
+            // 
+            this.ribbonColorChooser8.Color = System.Drawing.Color.Yellow;
+            this.ribbonColorChooser8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser8.Image")));
+            this.ribbonColorChooser8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser8.SmallImage")));
+            this.ribbonColorChooser8.Text = "";
+            this.ribbonColorChooser8.Click += new System.EventHandler(this.Yellow_Color);
+            // 
+            // ribbonColorChooser9
+            // 
+            this.ribbonColorChooser9.Color = System.Drawing.Color.Blue;
+            this.ribbonColorChooser9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser9.Image")));
+            this.ribbonColorChooser9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser9.SmallImage")));
+            this.ribbonColorChooser9.Text = "";
+            this.ribbonColorChooser9.Click += new System.EventHandler(this.Blue_Color);
+            // 
+            // ribbonColorChooser10
+            // 
+            this.ribbonColorChooser10.Color = System.Drawing.Color.Fuchsia;
+            this.ribbonColorChooser10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser10.Image")));
+            this.ribbonColorChooser10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonColorChooser10.SmallImage")));
+            this.ribbonColorChooser10.Text = "";
+            this.ribbonColorChooser10.Click += new System.EventHandler(this.Pink_Color);
+            // 
             // ribbonPanel26
             // 
-            this.ribbonPanel26.Items.Add(this.ribbonButtonList1);
-            this.ribbonPanel26.Text = "ribbonPanel26";
-            // 
-            // ribbonButtonList1
-            // 
-            this.ribbonButtonList1.Buttons.Add(this.ribbonButton8);
-            this.ribbonButtonList1.Buttons.Add(this.ribbonButton11);
-            this.ribbonButtonList1.Buttons.Add(this.ribbonButton12);
-            this.ribbonButtonList1.Buttons.Add(this.ribbonButton13);
-            this.ribbonButtonList1.ButtonsSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
-            this.ribbonButtonList1.FlowToBottom = false;
-            this.ribbonButtonList1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButtonList1.Image")));
-            this.ribbonButtonList1.ItemsSizeInDropwDownMode = new System.Drawing.Size(7, 5);
-            this.ribbonButtonList1.Text = "ribbonButtonList1";
-            // 
-            // ribbonButton8
-            // 
-            this.ribbonButton8.DropDownItems.Add(this.ribbonButton9);
-            this.ribbonButton8.DropDownItems.Add(this.ribbonButton10);
-            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
-            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
-            this.ribbonButton8.Text = "ribbonButton8";
-            this.ribbonButton8.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
-            // 
-            // ribbonButton9
-            // 
-            this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
-            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "ribbonButton9";
-            // 
-            // ribbonButton10
-            // 
-            this.ribbonButton10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.Image")));
-            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
-            this.ribbonButton10.Text = "ribbonButton10";
-            // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "ribbonButton11";
-            this.ribbonButton11.Click += new System.EventHandler(this.rectangleToolStripMenuItem_Click);
+            this.ribbonPanel26.Items.Add(this.ribbonButton12);
+            this.ribbonPanel26.Items.Add(this.ribbonButton13);
+            this.ribbonPanel26.Items.Add(this.ribbonButton14);
+            this.ribbonPanel26.Items.Add(this.ribbonButton15);
+            this.ribbonPanel26.Text = "Figures";
             // 
             // ribbonButton12
             // 
             this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
             this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
-            this.ribbonButton12.Text = "ribbonButton12";
-            this.ribbonButton12.Click += new System.EventHandler(this.triangleToolStripMenuItem_Click);
+            this.ribbonButton12.Text = "";
+            this.ribbonButton12.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
             // 
             // ribbonButton13
             // 
             this.ribbonButton13.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.Image")));
             this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
-            this.ribbonButton13.Text = "ribbonButton13";
+            this.ribbonButton13.Text = "";
             this.ribbonButton13.Click += new System.EventHandler(this.circleToolStripMenuItem_Click);
+            // 
+            // ribbonButton14
+            // 
+            this.ribbonButton14.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.Image")));
+            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
+            this.ribbonButton14.Text = "";
+            this.ribbonButton14.Click += new System.EventHandler(this.rectangleToolStripMenuItem_Click);
+            // 
+            // ribbonButton15
+            // 
+            this.ribbonButton15.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.Image")));
+            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
+            this.ribbonButton15.Text = "";
+            this.ribbonButton15.Click += new System.EventHandler(this.triangleToolStripMenuItem_Click);
             // 
             // ribbonItemGroup1
             // 
@@ -498,10 +552,10 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(767, 80);
+            this.trackBar1.Location = new System.Drawing.Point(483, 88);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(96, 45);
+            this.trackBar1.Size = new System.Drawing.Size(187, 45);
             this.trackBar1.TabIndex = 9;
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -515,11 +569,39 @@
             this.pictureBox1.Size = new System.Drawing.Size(1103, 482);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.Red_Color);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // ribbonButton11
+            // 
+            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
+            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
+            this.ribbonButton11.Text = "ribbonButton11";
+            this.ribbonButton11.Click += new System.EventHandler(this.rectangleToolStripMenuItem_Click);
+            // 
+            // ribbonButton10
+            // 
+            this.ribbonButton10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.Image")));
+            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
+            this.ribbonButton10.Text = "ribbonButton10";
+            // 
+            // ribbonButton9
+            // 
+            this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
+            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
+            this.ribbonButton9.Text = "ribbonButton9";
+            // 
+            // ribbonButton8
+            // 
+            this.ribbonButton8.DropDownItems.Add(this.ribbonButton9);
+            this.ribbonButton8.DropDownItems.Add(this.ribbonButton10);
+            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
+            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
+            this.ribbonButton8.Text = "ribbonButton8";
+            this.ribbonButton8.Click += new System.EventHandler(this.lineToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -533,7 +615,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Paint";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -580,8 +661,6 @@
         private System.Windows.Forms.RibbonDescriptionMenuItem ribbonDescriptionMenuItem1;
         private System.Windows.Forms.RibbonColorChooser ribbonColorChooser3;
         private System.Windows.Forms.RibbonTab ribbonTab4;
-        private System.Windows.Forms.RibbonPanel ribbonPanel10;
-        private System.Windows.Forms.RibbonButton ribbonButton4;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonItemGroup ribbonItemGroup2;
         private System.Windows.Forms.RibbonItemGroup ribbonItemGroup1;
@@ -618,15 +697,26 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel25;
         private System.Windows.Forms.RibbonTextBox ribbonTextBox2;
         private System.Windows.Forms.RibbonPanel ribbonPanel26;
-        private System.Windows.Forms.RibbonButtonList ribbonButtonList1;
-        private System.Windows.Forms.RibbonButton ribbonButton8;
-        private System.Windows.Forms.RibbonButton ribbonButton9;
-        private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
-        private System.Windows.Forms.RibbonButton ribbonButton12;
-        private System.Windows.Forms.RibbonButton ribbonButton13;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RibbonButton ribbonButton11;
+        private System.Windows.Forms.RibbonButton ribbonButton10;
+        private System.Windows.Forms.RibbonButton ribbonButton9;
+        private System.Windows.Forms.RibbonButton ribbonButton8;
+        private System.Windows.Forms.RibbonButton ribbonButton12;
+        private System.Windows.Forms.RibbonButton ribbonButton13;
+        private System.Windows.Forms.RibbonButton ribbonButton14;
+        private System.Windows.Forms.RibbonButton ribbonButton15;
+        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonButton ribbonButton17;
+        private System.Windows.Forms.RibbonButton ribbonButton18;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser5;
+        private System.Windows.Forms.RibbonButton ribbonButton19;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser6;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser7;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser8;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser9;
+        private System.Windows.Forms.RibbonColorChooser ribbonColorChooser10;
     }
 }
 
