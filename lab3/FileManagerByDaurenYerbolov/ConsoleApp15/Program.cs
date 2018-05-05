@@ -304,7 +304,6 @@ namespace ConsoleApp14
         {
             DirectoryInfo dir = new DirectoryInfo(@path);
             List<FileSystemInfo> array = new List<FileSystemInfo>();
-            //FileSystemInfo[] array1 = dir.GetFileSystemInfos();
             array.AddRange(dir.GetDirectories());
             array.AddRange(dir.GetFiles());
             
@@ -319,8 +318,6 @@ namespace ConsoleApp14
                 switch (pressedKey.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        //Console.BackgroundColor = ConsoleColor.Blue;
-                        //Console.Clear();
                         index--;
                         if (index < 0)
                         {
@@ -328,8 +325,6 @@ namespace ConsoleApp14
                         }
                         break;
                     case ConsoleKey.DownArrow:
-                        //Console.BackgroundColor = ConsoleColor.Blue;
-                        //Console.Clear();
                         index = (index + 1) % array.Count;
                         break;
                     case ConsoleKey.Enter:
@@ -337,22 +332,15 @@ namespace ConsoleApp14
                         {
                             try
                             {
-                                //Console.BackgroundColor = ConsoleColor.Blue;
-                                //Console.Clear();
                                 Path(array[index].FullName);
                             }
                             catch (Exception ex)
                             {
-                                //Console.BackgroundColor = ConsoleColor.Blue;
-                                //Console.Clear();
-                                //Console.CursorVisible = false;
                                 Console.WriteLine("Exception");
                             }
                         }
                         else if (array[index].GetType() == typeof(FileInfo))
                         {
-                            //Console.BackgroundColor = ConsoleColor.Blue;
-                            //Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Cyan;
                             FileStream fs = null;
                             StreamReader sr = null;
@@ -367,8 +355,6 @@ namespace ConsoleApp14
                             }
                             catch (Exception ex)
                             {
-                                //Console.BackgroundColor = ConsoleColor.Blue;
-                                //Console.Clear();
                                 Console.CursorVisible = false;
                                 Console.WriteLine("Exception");
                             }

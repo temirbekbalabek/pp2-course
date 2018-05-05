@@ -31,13 +31,14 @@ namespace Battleship
         private RibbonUpDown ribbonUpDown1;
         TurnDelegate tDelegate;
         public bool ToggleOn = false;
-           
+        public Color ColorToFillBusy;
 
-        public PlayerPanel(PanelPosition panelPosition, PlayerType playerType,TurnDelegate tDelegate)
+        public PlayerPanel(PanelPosition panelPosition, PlayerType playerType,TurnDelegate tDelegate, Color ColorToFillBusy)
         {
             this.panelPosition = panelPosition;
             this.playerType = playerType;
             this.tDelegate = tDelegate;
+            this.ColorToFillBusy = ColorToFillBusy;
 
             Initialize();
 
@@ -99,8 +100,6 @@ namespace Battleship
             }
             brain = new Brain(DrawButton);
             
-            
-            
         }
 
 
@@ -121,7 +120,7 @@ namespace Battleship
                 }
                 else if (brain.ShootingProcess(btn.Name))
                 {
-                    
+
                 }
             }
         }
@@ -142,7 +141,7 @@ namespace Battleship
                             colorToFill = Color.White;
                             break;
                         case CellState.busy:
-                            if (playerType == PlayerType.Human)
+                            /*if (playerType == PlayerType.Human)
                             {
                                 colorToFill = Color.Tan;
                             }
@@ -150,7 +149,8 @@ namespace Battleship
                             {
                                 colorToFill = Color.White;
 
-                            }
+                            }*/
+                            colorToFill = ColorToFillBusy;
                             break;
                         case CellState.aura:
                             colorToFill = Color.White;

@@ -28,6 +28,8 @@ namespace MySQLSample2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button7.Enabled = true;
+            button6.Enabled = true;
             mySqlConnection = new MySqlConnection(
                "SERVER=localhost;" +
                "DATABASE=fitbd;" +
@@ -87,9 +89,9 @@ namespace MySQLSample2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string s = textBox1.Text;
-            string query = "SELECT * FROM MyTelephoneBook WHERE Firstname LIKE" + " '%" + s + "'";
-
+            string msg = textBox1.Text;
+            string query = "SELECT * FROM MyTelephoneBook WHERE Firstname LIKE" + " '%" + msg + "'";
+            
             Setup(query, mySqlConnection);
             textBox1.Text = null;
         }

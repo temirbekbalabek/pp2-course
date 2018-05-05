@@ -69,6 +69,7 @@ namespace Battleship
             if(g1.p1.brain.units.Count == 10)
             {
                 g1.p2.Enabled = true;
+                g1.p1.Enabled = false;
                 button1.Enabled = false;
                 g1.p2.RandomGenerateShips();
                 MessageBox.Show("Корабли бота были расставлены. Игра начинается!");

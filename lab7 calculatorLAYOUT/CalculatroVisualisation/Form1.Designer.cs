@@ -91,8 +91,6 @@
             this.button1.TabStop = false;
             this.button1.Text = "7";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button_Click);
-            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button2
             // 
@@ -109,8 +107,6 @@
             this.button2.TabStop = false;
             this.button2.Text = "9";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button_Click);
-            this.button2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button3
             // 
@@ -127,8 +123,6 @@
             this.button3.TabStop = false;
             this.button3.Text = "8";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button_Click);
-            this.button3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button4
             // 
@@ -145,8 +139,6 @@
             this.button4.TabStop = false;
             this.button4.Text = "5";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button_Click);
-            this.button4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button5
             // 
@@ -163,8 +155,6 @@
             this.button5.TabStop = false;
             this.button5.Text = "6";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button_Click);
-            this.button5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button6
             // 
@@ -181,8 +171,6 @@
             this.button6.TabStop = false;
             this.button6.Text = "4";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button_Click);
-            this.button6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button7
             // 
@@ -199,8 +187,6 @@
             this.button7.TabStop = false;
             this.button7.Text = "2";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button_Click);
-            this.button7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button8
             // 
@@ -217,8 +203,6 @@
             this.button8.TabStop = false;
             this.button8.Text = "3";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button_Click);
-            this.button8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button9
             // 
@@ -235,8 +219,6 @@
             this.button9.TabStop = false;
             this.button9.Text = "1";
             this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button_Click);
-            this.button9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button12
             // 
@@ -253,8 +235,6 @@
             this.button12.TabStop = false;
             this.button12.Text = "0";
             this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button_Click);
-            this.button12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button11
             // 
@@ -271,8 +251,6 @@
             this.button11.TabStop = false;
             this.button11.Text = ",";
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button_Click);
-            this.button11.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button10
             // 
@@ -289,8 +267,6 @@
             this.button10.TabStop = false;
             this.button10.Text = "/";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.Operator_Click);
-            this.button10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button13
             // 
@@ -307,8 +283,6 @@
             this.button13.TabStop = false;
             this.button13.Text = "CE";
             this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.ClearEntry_Click);
-            this.button13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button14
             // 
@@ -325,9 +299,6 @@
             this.button14.TabStop = false;
             this.button14.Text = "C";
             this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.FullClear_Click);
-            this.button14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
-            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.LightGray;
@@ -343,8 +314,6 @@
             this.button15.TabStop = false;
             this.button15.Text = "*";
             this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.Operator_Click);
-            this.button15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button17
             // 
@@ -362,8 +331,6 @@
             this.button17.TabStop = false;
             this.button17.Text = "-";
             this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.Operator_Click);
-            this.button17.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button18
             // 
@@ -380,8 +347,6 @@
             this.button18.TabStop = false;
             this.button18.Text = "=";
             this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.equal_Click);
-            this.button18.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button19
             // 
@@ -398,8 +363,6 @@
             this.button19.TabStop = false;
             this.button19.Text = "+";
             this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.Operator_Click);
-            this.button19.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // display
             // 
@@ -446,8 +409,6 @@
             this.button16.TabStop = false;
             this.button16.Text = "xⁿ";
             this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.Operator_Click);
-            this.button16.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button20
             // 
@@ -464,8 +425,6 @@
             this.button20.TabStop = false;
             this.button20.Text = "1/x";
             this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.inverse_Click);
-            this.button20.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button21
             // 
@@ -482,8 +441,6 @@
             this.button21.TabStop = false;
             this.button21.Text = "√";
             this.button21.UseVisualStyleBackColor = false;
-            this.button21.Click += new System.EventHandler(this.squareroot_Click);
-            this.button21.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button23
             // 
@@ -501,8 +458,6 @@
             this.button23.TabStop = false;
             this.button23.Text = "⌫";
             this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.erase_Click);
-            this.button23.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // button24
             // 
@@ -519,8 +474,6 @@
             this.button24.TabStop = false;
             this.button24.Text = "±";
             this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.negate_Click);
-            this.button24.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             // 
             // contextMenuStrip1
             // 
@@ -582,14 +535,12 @@
             this.копироватьCtrlCToolStripMenuItem.Name = "копироватьCtrlCToolStripMenuItem";
             this.копироватьCtrlCToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.копироватьCtrlCToolStripMenuItem.Text = "Копировать (Ctrl + C)";
-            this.копироватьCtrlCToolStripMenuItem.Click += new System.EventHandler(this.копироватьCtrlCToolStripMenuItem_Click);
             // 
             // вставитьCtrlVToolStripMenuItem
             // 
             this.вставитьCtrlVToolStripMenuItem.Name = "вставитьCtrlVToolStripMenuItem";
             this.вставитьCtrlVToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.вставитьCtrlVToolStripMenuItem.Text = "Вставить (Ctrl + V)";
-            this.вставитьCtrlVToolStripMenuItem.Click += new System.EventHandler(this.вставитьCtrlVToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -620,7 +571,6 @@
             this.button22.TabStop = false;
             this.button22.Text = "M-";
             this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.Memory_Click);
             // 
             // button25
             // 
@@ -638,7 +588,6 @@
             this.button25.TabStop = false;
             this.button25.Text = "MR";
             this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.MemoryClear_Click);
             // 
             // button26
             // 
@@ -655,7 +604,6 @@
             this.button26.TabStop = false;
             this.button26.Text = "M+";
             this.button26.UseVisualStyleBackColor = false;
-            this.button26.Click += new System.EventHandler(this.Memory_Click);
             // 
             // button27
             // 
@@ -673,7 +621,6 @@
             this.button27.TabStop = false;
             this.button27.Text = "MC";
             this.button27.UseVisualStyleBackColor = false;
-            this.button27.Click += new System.EventHandler(this.MemoryClear_Click);
             // 
             // button28
             // 
@@ -690,7 +637,6 @@
             this.button28.TabStop = false;
             this.button28.Text = "MS";
             this.button28.UseVisualStyleBackColor = false;
-            this.button28.Click += new System.EventHandler(this.Memory_Click);
             // 
             // button29
             // 
@@ -708,7 +654,6 @@
             this.button29.TabStop = false;
             this.button29.Text = "M^";
             this.button29.UseVisualStyleBackColor = false;
-            this.button29.Click += new System.EventHandler(this.MemoryClear_Click);
             // 
             // Form1
             // 
@@ -758,7 +703,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CopyPaste_KeyDown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

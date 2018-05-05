@@ -21,9 +21,10 @@ namespace Delegates
 
             while (true)
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(1000);
                 sumOfNumbers = sum.SumOfNumbers;
                 sumOfNumbers.Invoke(x, y);
+                break;
             }
 
 

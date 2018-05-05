@@ -227,13 +227,14 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 31);
             this.button4.TabIndex = 6;
-            this.button4.Text = "+";
+            this.button4.Text = "->";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(29, 45);
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(75, 45);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(40, 23);
             this.button6.TabIndex = 8;
@@ -243,7 +244,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(75, 45);
+            this.button7.Enabled = false;
+            this.button7.Location = new System.Drawing.Point(29, 45);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(40, 23);
             this.button7.TabIndex = 9;
